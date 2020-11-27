@@ -26,10 +26,11 @@ namespace Практическая__6
 
         private void btnCalc1_Click(object sender, EventArgs e)
         {
-            int part = Convert.ToInt32(txtThirdNumber1.Text);
             Pair pair1 = new Pair(Convert.ToInt32(txtFirstNumber1.Text), Convert.ToInt32(txtSecondNumber1.Text));
-            MessageBox.Show("Значение суммы 2 чисел = " + pair1.Sum(0));
-            MessageBox.Show("Уменьшение поля на 1 = " + pair1.Sum(part));
+
+            Pair firstpair = --pair1;
+            MessageBox.Show("Операция уменьшение полей на 1 для 1 числа = " + firstpair.First);
+            MessageBox.Show("Операция уменьшение полей на 1 для 2 числа = " + firstpair.Second);
         }
 
         /// <summary>
@@ -42,9 +43,9 @@ namespace Практическая__6
         {
             Pair pair1 = new Pair(Convert.ToInt32(txtFirstNumber2.Text), Convert.ToInt32(txtSecondNumber2.Text));
             Pair pair2 = new Pair(Convert.ToInt32(txtThirdNumber2.Text), Convert.ToInt32(txtFourhNumber2.Text));
-
-            Pair sumPair1 = Pair.SumPair(pair1, pair2);
-            MessageBox.Show("Значение суммы 2 пар чисел = " + "( " + sumPair1.First + " ; " + sumPair1.Second + " )");
+            
+            Pair sumPair = pair1 + pair2;
+            MessageBox.Show("Значение суммы 2 пар чисел = " + "( " + sumPair.First + " ; " + sumPair.Second + " )");
         }
 
         /// <summary>

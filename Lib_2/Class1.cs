@@ -47,25 +47,24 @@ namespace Lib_2
         }
 
         /// <summary>
-        /// Метод класса Pair "Сложение полей чисел"
+        /// Операция инкремента 
         /// </summary>
-        /// <returns>Вывод суммы первого числа со вторым</returns>
-
-        public int Sum(int part)
+        /// <returns></returns>
+        public static Pair operator --(Pair firstpair)
         {
-            return _firstNumber + _secondNumber - part;
+            return new Pair(--firstpair.First,--firstpair.Second);
         }
 
         /// <summary>
-        /// Метод класса Pair "Сложение пар чисел"
+        /// Операция сложения пары чисел
         /// </summary>
-        /// <param name="firstPair">Первая пара чисел</param>
-        /// <param name="secondPair">Вторая пара чисел</param>
-        /// <returns>Вывод суммы 1 числа 1 пары с 1 числом 2 пары и 2 числа 1 пары со 2 числом 2 пары</returns>
+        /// <param name="firstpair"></param>
+        /// <param name="secondpair"></param>
+        /// <returns></returns>
 
-        public static Pair SumPair(Pair firstPair, Pair secondPair)
+        public static Pair operator +(Pair firstpair, Pair secondpair)
         {
-            return new Pair(firstPair.First + secondPair.First, firstPair.Second + secondPair.Second);
+            return new Pair(firstpair.First + secondpair.First, firstpair.Second + secondpair.Second);
         }
     }
 }
